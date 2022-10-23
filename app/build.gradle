@@ -1,19 +1,18 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
 }
 
 android {
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.example.quotes"
         minSdk 21
-        targetSdk 33
+        //noinspection OldTargetApi
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -66,8 +65,8 @@ dependencies {
     implementation("androidx.room:room-runtime:2.4.3")
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
-    annotationProcessor "androidx.room:room-compiler:2.3.0"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    annotationProcessor "androidx.room:room-compiler:2.4.3"
     //---  To use Kotlin annotation processing tool (kapt)
     kapt("androidx.room:room-compiler:2.4.3")
     //--- optional - Kotlin Extensions and Coroutines support for Room
@@ -83,6 +82,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     def lifecycle_version="2.6.0"
-//    implementation "androidx.lifecycle:lyfecycle-viewmodel:$lyfecycle_version"
- //   implementation "androidx.lifecycle:lyfecycle-viewmodel-ktx:$lyfecycle_version"
+    //implementation "androidx.lifecycle:lyfecycle-viewmodel:$lyfecycle_version"
+    // implementation "androidx.lifecycle:lyfecycle-viewmodel-ktx:$lyfecycle_version"
 }
